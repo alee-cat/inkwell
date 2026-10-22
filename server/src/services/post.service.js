@@ -24,7 +24,7 @@ export const PostService = {
         EventBus.emit("post.published", {
             postId: post.id,
             authorId,
-            title,
+            title: post.title,
             tags: tagNames,
         });
 

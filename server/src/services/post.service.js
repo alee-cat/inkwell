@@ -39,6 +39,14 @@ export const PostService = {
         return { posts, page, hasMore };
     },
 
+    async getById(id) {
+    return PostRepository.findById(id);
+    },
+
+    async delete(id) {
+    return PostRepository.deleteById(id);
+    },
+
     async search({ query, page = 1, pageSize = 10 }) {
         return searchStrategy.search(query, { page, pageSize });
     },
